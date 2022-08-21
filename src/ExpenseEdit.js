@@ -16,7 +16,7 @@ const ExpenseEdit = () => {
 
   useEffect(() => {
     if (id !== 'new') {
-      fetch(`/api/expenses/${id}`)
+      fetch(`https://expenses-app-zti.herokuapp.com/api/expenses/${id}`)
         .then(response => response.json())
         .then(data => setExpense(data));
     }
@@ -38,7 +38,7 @@ const ExpenseEdit = () => {
     console.log("Expenses:");
     console.log(expense);
 
-    await fetch('/api/expenses' + (expense.id ? '/' + expense.id : ''), {
+    await fetch('https://expenses-app-zti.herokuapp.com/api/expenses' + (expense.id ? '/' + expense.id : ''), {
       method: (expense.id) ? 'PUT' : 'POST',
       headers: {
         'Accept': 'application/json',

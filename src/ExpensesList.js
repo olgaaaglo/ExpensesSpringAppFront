@@ -42,7 +42,7 @@ const ExpensesList = () => {
   }, []);
 
   const remove = async (id) => {
-    await fetch(`/api/expenses/${id}`, {
+    await fetch(`https://expenses-app-zti.herokuapp.com/api/expenses/${id}`, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
@@ -113,7 +113,7 @@ const ExpensesList = () => {
       return false;
     }
 
-    await fetch('api/expenses')
+    await fetch('https://expenses-app-zti.herokuapp.com/api/expenses')
       .then(response => response.json())
       .then(data => {
         let filtered = data.filter(isInRange);
