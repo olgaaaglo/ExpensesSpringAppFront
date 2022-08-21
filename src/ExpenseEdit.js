@@ -30,10 +30,7 @@ const ExpenseEdit = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // console.log(typeof expense.label);
     expense.label = expense.label.toLowerCase();
-    // console.log(typeof expense.labels);
-    // console.log(expense.labels);
 
     console.log("Expenses:");
     console.log(expense);

@@ -75,9 +75,9 @@ const ExpensesList = () => {
 
   const labelsCheckboxes = labels.map(label => {
     return <FormGroup>
-            <Label for={ label }>{ label }</Label>{' '}
             <Input type="checkbox" name={ label } id={ label }
-                  autoComplete={ label }/>
+                  autoComplete={ label }/>{' '}
+            <Label for={ label }> { label }</Label>
           </FormGroup>
   });
 
@@ -89,10 +89,6 @@ const ExpensesList = () => {
     const offset = 2;
 
     function isInRange(expense) {
-      console.log("data ", date1.value);
-      console.log("data2 ", date2.value);
-      console.log("data ", date1.value == null);
-      console.log("data2 ", date2.value == null);
       return (expense.date >= date1.value || !date1.value) && (expense.date <= date2.value || !date2.value);
     }
 
@@ -106,7 +102,6 @@ const ExpensesList = () => {
 
     function isChecked(expense) {
       for (let i=0; i<labels.length; i++) {
-        console.log("in loop ", labels[i], expense.label, allLabels[i+offset].checked);
         if (labels[i] === expense.label && allLabels[i+offset].checked)
           return true;
       }
