@@ -93,7 +93,7 @@ const ExpensesList = () => {
       console.log("data2 ", date2.value);
       console.log("data ", date1.value == null);
       console.log("data2 ", date2.value == null);
-      return (expense.date >= date1.value || date1.value == null) && (date2.value == null || expense.date <= date2.value);
+      return (expense.date >= date1.value || !date1.value) && (expense.date <= date2.value || !date2.value);
     }
 
     function areAllUnchecked() {
