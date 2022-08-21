@@ -29,7 +29,7 @@ const ExpensesList = () => {
   useEffect(() => {
     setLoading(true);
 
-    fetch('api/expenses')
+    fetch('https://expenses-app-zti.herokuapp.com/api/expenses')
       .then(response => response.json())
       .then(data => {
         setExpenses(data.sort(compareExpenses));
